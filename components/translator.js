@@ -62,10 +62,24 @@ class Translator {
         return text;
     }
 
+    time(text) {
+        var regex = /\b\d+\:\d+\b/g
+        var searchText = text.match(regex);
+
+        if (searchText) {
+            var splitText = text.split(/\b\d+\:\d+\b/g);
+            var change = searchText[0].replace(/\b\:\b/g, ".")
+            splitText.splice(1, 0, change);
+            text = splitText.join("")
+        }
+
+        return text
+    }
+
 }
 
-var input = "Dr. Grosh will see you now"
+var input = "Lunch is at 12:15 today"
 
-console.log(new Translator().titles(input))
+console.log(new Translator().time(input))
 
 module.exports = Translator;

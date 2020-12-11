@@ -131,7 +131,11 @@ suite('Unit Tests', () => {
                 var text = "Lunch is at 12:15 today";
                 var translation = "Lunch is at 12.15 today"
 
-                //done();
+                var result = translate.time(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })
