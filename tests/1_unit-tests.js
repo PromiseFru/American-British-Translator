@@ -105,14 +105,22 @@ suite('Unit Tests', () => {
                 var text = "No Mr. Bond, I expect you to die";
                 var translation = "No Mr Bond, I expect you to die"
 
-                //done();
+                var result = translate.titles(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("Dr. Grosh will see you now", (done) => {
                 var text = "Dr. Grosh will see you now";
                 var translation = "Dr Grosh will see you now"
 
-                //done();
+                var result = translate.titles(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })

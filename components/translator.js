@@ -24,7 +24,7 @@ class Translator {
         return text;
     }
 
-    americanOnly(text){
+    americanOnly(text) {
         var americanSpellings = Object.keys(americanOnly);
         var britishSpellings = Object.values(americanOnly);
 
@@ -42,10 +42,30 @@ class Translator {
         return text;
     }
 
+    titles(text) {
+        var americanSpellings = Object.keys(americanToBritishTitles);
+        var britishSpellings = Object.values(americanToBritishTitles);
+
+        // search text for any matching words or sentences in dic
+        for (var i = 0; i < americanSpellings.length; i++) {
+            var regex = new RegExp(`\\b${americanSpellings[i]}\.\\b`, "gi")
+            var searchText = text.match(regex);
+
+            if (searchText) {
+                var firstLetter = britishSpellings[i].charAt(0).toUpperCase()
+                var bodyLetters = britishSpellings[i].substr(1)
+                text = text.replace(regex, firstLetter + bodyLetters + " ");
+            }
+
+        }
+
+        return text;
+    }
+
 }
 
-var input = "Can you toss this in the trashcan for me?"
+var input = "Dr. Grosh will see you now"
 
-console.log(new Translator().americanOnly(input))
+console.log(new Translator().titles(input))
 
 module.exports = Translator;
