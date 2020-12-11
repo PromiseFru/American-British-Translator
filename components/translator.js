@@ -12,7 +12,7 @@ class Translator {
 
         // search text for any matching words or sentences in dic
         for (var i = 0; i < americanSpellings.length; i++) {
-            var regex = new RegExp(`${americanSpellings[i]}`, "gi")
+            var regex = new RegExp(`\\b${americanSpellings[i]}\\b`, "gi")
             var searchText = text.match(regex);
 
             if (searchText) {
