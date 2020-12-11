@@ -19,14 +19,22 @@ suite('Unit Tests', () => {
                 var text = "Mangoes are my favorite fruit";
                 var translation = "Mangoes are my favourite fruit"
 
-                //done();
+                var result = translate.americanToBritish(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test('I ate yogurt for breakfast', (done) => {
                 var text = "I ate yogurt for breakfast";
                 var translation = "I ate yoghurt for breakfast"
 
-                //done();
+                var result = translate.americanToBritish(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })
