@@ -55,6 +55,33 @@ suite('Unit Tests', () => {
             //done();
         });
 
+        test("To play hooky means to skip class or work", (done) => {
+            var text = "To play hooky means to skip class or work";
+            var translation = "To bunk off means to skip class or work"
+
+            //done();
+        });
+
+        test("No Mr. Bond, I expect you to die", (done) => {
+            var text = "No Mr. Bond, I expect you to die";
+            var translation = "No Mr Bond, I expect you to die"
+
+            //done();
+        });
+
+        test("Dr. Grosh will see you now", (done) => {
+            var text = "Dr. Grosh will see you now";
+            var translation = "Dr Grosh will see you now"
+
+            //done();
+        });
+
+        test("Lunch is at 12:15 today", (done) => {
+            var text = "Lunch is at 12:15 today";
+            var translation = "Lunch is at 12.15 today"
+
+            //done();
+        });
 
     })
 
