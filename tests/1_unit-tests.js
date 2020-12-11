@@ -26,6 +26,20 @@ suite('Unit Tests', () => {
 
             //done();
         });
+
+        test("We had a party at my friend's condo", (done) => {
+            var text = "We had a party at my friend's condo";
+            var translation = "We had a party at my friend's flat"
+
+            //done();
+        });
+
+        test("Can you toss this in the trashcan for me?", (done) => {
+            var text = "Can you toss this in the trashcan for me?";
+            var translation = "Can you toss this in the bin for me?"
+
+            //done();
+        });
     })
 
 });
