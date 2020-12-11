@@ -40,6 +40,22 @@ suite('Unit Tests', () => {
 
             //done();
         });
+
+        test("The parking lot was full", (done) => {
+            var text = "The parking lot was full";
+            var translation = "The car park was full"
+
+            //done();
+        });
+
+        test("Like a high tech Rube Goldberg machine", (done) => {
+            var text = "Like a high tech Rube Goldberg machine";
+            var translation = "Like a high tech Heath Robinson device"
+
+            //done();
+        });
+
+
     })
 
 });
