@@ -45,14 +45,22 @@ suite('Unit Tests', () => {
                 var text = "We had a party at my friend's condo";
                 var translation = "We had a party at my friend's flat"
 
-                //done();
+                var result = translate.americanOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("Can you toss this in the trashcan for me?", (done) => {
                 var text = "Can you toss this in the trashcan for me?";
                 var translation = "Can you toss this in the bin for me?"
 
-                //done();
+                var result = translate.americanOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
 
@@ -60,21 +68,33 @@ suite('Unit Tests', () => {
                 var text = "The parking lot was full";
                 var translation = "The car park was full"
 
-                //done();
+                var result = translate.americanOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("Like a high tech Rube Goldberg machine", (done) => {
                 var text = "Like a high tech Rube Goldberg machine";
                 var translation = "Like a high tech Heath Robinson device"
 
-                //done();
+                var result = translate.americanOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("To play hooky means to skip class or work", (done) => {
                 var text = "To play hooky means to skip class or work";
                 var translation = "To bunk off means to skip class or work"
 
-                //done();
+                var result = translate.americanOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })

@@ -24,10 +24,28 @@ class Translator {
         return text;
     }
 
+    americanOnly(text){
+        var americanSpellings = Object.keys(americanOnly);
+        var britishSpellings = Object.values(americanOnly);
+
+        // search text for any matching words or sentences in dic
+        for (var i = 0; i < americanSpellings.length; i++) {
+            var regex = new RegExp(`\\b${americanSpellings[i]}\\b`, "gi")
+            var searchText = text.match(regex);
+
+            if (searchText) {
+                text = text.replace(regex, britishSpellings[i]);
+            }
+
+        }
+
+        return text;
+    }
+
 }
 
-var input = "this bangs is a test acclimate accessorize aerogram"
+var input = "Can you toss this in the trashcan for me?"
 
-console.log(new Translator().americanToBritish(input))
+console.log(new Translator().americanOnly(input))
 
 module.exports = Translator;
