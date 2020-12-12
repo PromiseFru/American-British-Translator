@@ -165,6 +165,28 @@ suite('Unit Tests', () => {
             // done();
         });
 
+        test("I spent the bank holiday at the funfair", (done) => {
+            var text = "I spent the bank holiday at the funfair";
+            var translation = "I spent the public holiday at the carnival"
+
+            // done();
+        });
+
+        test("I had a bicky then went to the chippy", (done) => {
+            var text = "I had a bicky then went to the chippy";
+            var translation = "I had a cookie then went to the fish-and-chip shop"
+
+            // done();
+        });
+
+        test("I've just got bits and bobs in my bum bag", (done) => {
+            var text = "I've just got bits and bobs in my bum bag";
+            var translation = "I've just got odds and ends in my fanny pack"
+
+            // done();
+        });
+
+
 
     })
 
