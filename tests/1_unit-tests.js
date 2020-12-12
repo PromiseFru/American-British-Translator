@@ -142,4 +142,30 @@ suite('Unit Tests', () => {
 
     })
 
+    suite("Translate British to American", () => {
+
+        test("We watched the footie match for a while", (done) => {
+            var text = "We watched the footie match for a while";
+            var translation = "We watched the soccer match for a while"
+
+            // done();
+        });
+
+        test("Paracetamol takes up to an hour to work", (done) => {
+            var text = "Paracetamol takes up to an hour to work";
+            var translation = "Tylenol takes up to an hour to work"
+
+            // done();
+        });
+
+        test("First, caramelise the onions", (done) => {
+            var text = "First, caramelise the onions";
+            var translation = "First, caramelize the onions"
+
+            // done();
+        });
+
+
+    })
+
 });
