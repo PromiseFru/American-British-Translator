@@ -186,7 +186,33 @@ suite('Unit Tests', () => {
             // done();
         });
 
+        test("The car boot sale at Boxted Airfield was called off", (done) => {
+            var text = "The car boot sale at Boxted Airfield was called off";
+            var translation = "The swap meet at Boxted Airfield was called off"
 
+            // done();
+        });
+
+        test("Have you met Mrs Kalyani?", (done) => {
+            var text = "Have you met Mrs Kalyani?";
+            var translation = "Have you met Mrs. Kalyani?"
+
+            // done();
+        });
+
+        test("Prof Joyner of King's College, London", (done) => {
+            var text = "Prof Joyner of King's College, London";
+            var translation = "Prof. Joyner of King's College, London"
+
+            // done();
+        });
+
+        test("Tea time is usually around 4 or 4.30", (done) => {
+            var text = "Tea time is usually around 4 or 4.30";
+            var translation = "Tea time is usually around 4 or 4:30"
+
+            // done();
+        });
 
     })
 
