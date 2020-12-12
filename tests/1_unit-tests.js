@@ -144,75 +144,91 @@ suite('Unit Tests', () => {
 
     suite("Translate British to American", () => {
 
-        test("We watched the footie match for a while", (done) => {
-            var text = "We watched the footie match for a while";
-            var translation = "We watched the soccer match for a while"
+        suite("British only Func", () => {
 
-            // done();
-        });
+            test("We watched the footie match for a while", (done) => {
+                var text = "We watched the footie match for a while";
+                var translation = "We watched the soccer match for a while"
 
-        test("Paracetamol takes up to an hour to work", (done) => {
-            var text = "Paracetamol takes up to an hour to work";
-            var translation = "Tylenol takes up to an hour to work"
+                // done();
+            });
 
-            // done();
-        });
+            test("Paracetamol takes up to an hour to work", (done) => {
+                var text = "Paracetamol takes up to an hour to work";
+                var translation = "Tylenol takes up to an hour to work"
 
-        test("First, caramelise the onions", (done) => {
-            var text = "First, caramelise the onions";
-            var translation = "First, caramelize the onions"
+                // done();
+            });
 
-            // done();
-        });
+            test("I spent the bank holiday at the funfair", (done) => {
+                var text = "I spent the bank holiday at the funfair";
+                var translation = "I spent the public holiday at the carnival"
 
-        test("I spent the bank holiday at the funfair", (done) => {
-            var text = "I spent the bank holiday at the funfair";
-            var translation = "I spent the public holiday at the carnival"
+                // done();
+            });
 
-            // done();
-        });
+            test("I had a bicky then went to the chippy", (done) => {
+                var text = "I had a bicky then went to the chippy";
+                var translation = "I had a cookie then went to the fish-and-chip shop"
 
-        test("I had a bicky then went to the chippy", (done) => {
-            var text = "I had a bicky then went to the chippy";
-            var translation = "I had a cookie then went to the fish-and-chip shop"
+                // done();
+            });
 
-            // done();
-        });
+            test("I've just got bits and bobs in my bum bag", (done) => {
+                var text = "I've just got bits and bobs in my bum bag";
+                var translation = "I've just got odds and ends in my fanny pack"
 
-        test("I've just got bits and bobs in my bum bag", (done) => {
-            var text = "I've just got bits and bobs in my bum bag";
-            var translation = "I've just got odds and ends in my fanny pack"
+                // done();
+            });
 
-            // done();
-        });
+            test("The car boot sale at Boxted Airfield was called off", (done) => {
+                var text = "The car boot sale at Boxted Airfield was called off";
+                var translation = "The swap meet at Boxted Airfield was called off"
 
-        test("The car boot sale at Boxted Airfield was called off", (done) => {
-            var text = "The car boot sale at Boxted Airfield was called off";
-            var translation = "The swap meet at Boxted Airfield was called off"
+                // done();
+            });
 
-            // done();
-        });
+        })
 
-        test("Have you met Mrs Kalyani?", (done) => {
-            var text = "Have you met Mrs Kalyani?";
-            var translation = "Have you met Mrs. Kalyani?"
+        suite("British to American Func", () => {
 
-            // done();
-        });
+            test("First, caramelise the onions", (done) => {
+                var text = "First, caramelise the onions";
+                var translation = "First, caramelize the onions"
 
-        test("Prof Joyner of King's College, London", (done) => {
-            var text = "Prof Joyner of King's College, London";
-            var translation = "Prof. Joyner of King's College, London"
+                // done();
+            });
 
-            // done();
-        });
+        })
 
-        test("Tea time is usually around 4 or 4.30", (done) => {
-            var text = "Tea time is usually around 4 or 4.30";
-            var translation = "Tea time is usually around 4 or 4:30"
+        suite("British to American titles", () => {
 
-            // done();
-        });
+            test("Have you met Mrs Kalyani?", (done) => {
+                var text = "Have you met Mrs Kalyani?";
+                var translation = "Have you met Mrs. Kalyani?"
+
+                // done();
+            });
+
+            test("Prof Joyner of King's College, London", (done) => {
+                var text = "Prof Joyner of King's College, London";
+                var translation = "Prof. Joyner of King's College, London"
+
+                // done();
+            });
+
+        })
+
+        suite("British to American time", () => {
+
+            test("Tea time is usually around 4 or 4.30", (done) => {
+                var text = "Tea time is usually around 4 or 4.30";
+                var translation = "Tea time is usually around 4 or 4:30"
+
+                // done();
+            });
+
+        })
 
     })
 
