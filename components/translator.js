@@ -65,19 +65,38 @@ class Translator {
         return text;
     }
 
-    titles(text) {
+    americanToBritishTitles(text) {
         var americanSpellings = Object.keys(americanToBritishTitles);
         var britishSpellings = Object.values(americanToBritishTitles);
 
         // search text for any matching words or sentences in dic
         for (var i = 0; i < americanSpellings.length; i++) {
-            var regex = new RegExp(`\\b${americanSpellings[i]}\.\\b`, "gi")
+            var regex = new RegExp(`\\b${americanSpellings[i]}`, "gi")
             var searchText = text.match(regex);
 
             if (searchText) {
                 var firstLetter = britishSpellings[i].charAt(0).toUpperCase()
                 var bodyLetters = britishSpellings[i].substr(1)
-                text = text.replace(regex, firstLetter + bodyLetters + " ");
+                text = text.replace(regex, firstLetter + bodyLetters);
+            }
+        }
+
+        return text;
+    }
+
+    britishToAmericanTitles(text) {
+        var americanSpellings = Object.keys(americanToBritishTitles);
+        var britishSpellings = Object.values(americanToBritishTitles);
+
+        // search text for any matching words or sentences in dic
+        for (var i = 0; i < britishSpellings.length; i++) {
+            var regex = new RegExp(`\\b${britishSpellings[i]}\\b`, "gi")
+            var searchText = text.match(regex);
+
+            if (searchText) {
+                var firstLetter = americanSpellings[i].charAt(0).toUpperCase()
+                var bodyLetters = americanSpellings[i].substr(1)
+                text = text.replace(regex, firstLetter + bodyLetters);
             }
 
         }
@@ -101,8 +120,8 @@ class Translator {
 
 }
 
-var input = "I had a bicky then went to the chippy"
+var input = "Dr. Grosh will see you now"
 
-console.log(new Translator().britishOnly(input))
+console.log(new Translator().americanToBritishTitles(input))
 
 module.exports = Translator;

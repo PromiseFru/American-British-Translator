@@ -105,7 +105,7 @@ suite('Unit Tests', () => {
                 var text = "No Mr. Bond, I expect you to die";
                 var translation = "No Mr Bond, I expect you to die"
 
-                var result = translate.titles(text);
+                var result = translate.americanToBritishTitles(text);
 
                 assert.equal(result, translation)
 
@@ -116,7 +116,7 @@ suite('Unit Tests', () => {
                 var text = "Dr. Grosh will see you now";
                 var translation = "Dr Grosh will see you now"
 
-                var result = translate.titles(text);
+                var result = translate.americanToBritishTitles(text);
 
                 assert.equal(result, translation)
 
@@ -235,14 +235,22 @@ suite('Unit Tests', () => {
                 var text = "Have you met Mrs Kalyani?";
                 var translation = "Have you met Mrs. Kalyani?"
 
-                // done();
+                var result = translate.britishToAmericanTitles(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("Prof Joyner of King's College, London", (done) => {
                 var text = "Prof Joyner of King's College, London";
                 var translation = "Prof. Joyner of King's College, London"
 
-                // done();
+                var result = translate.britishToAmericanTitles(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })
