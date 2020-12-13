@@ -220,7 +220,11 @@ suite('Unit Tests', () => {
                 var text = "First, caramelise the onions";
                 var translation = "First, caramelize the onions"
 
-                // done();
+                var result = translate.americanToBritish(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })

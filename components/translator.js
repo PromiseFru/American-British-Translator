@@ -12,11 +12,16 @@ class Translator {
 
         // search text for any matching words or sentences in dic
         for (var i = 0; i < americanSpellings.length; i++) {
-            var regex = new RegExp(`\\b${americanSpellings[i]}\\b`, "gi")
-            var searchText = text.match(regex);
+            var Aregex = new RegExp(`\\b${americanSpellings[i]}\\b`, "gi")
+            var Bregex = new RegExp(`\\b${britishSpellings[i]}\\b`, "gi")
+            var AsearchText = text.match(Aregex);
+            var BsearchText = text.match(Bregex);
 
-            if (searchText) {
-                text = text.replace(regex, britishSpellings[i]);
+            if (AsearchText) {
+                text = text.replace(Aregex, britishSpellings[i]);
+            }
+            if (BsearchText) {
+                text = text.replace(Bregex, americanSpellings[i]);
             }
 
         }
