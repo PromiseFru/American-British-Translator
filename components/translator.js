@@ -105,12 +105,21 @@ class Translator {
     }
 
     time(text) {
-        var regex = /\b\d+\:\d+\b/g
-        var searchText = text.match(regex);
+        var Aregex = /\b\d+\:\d+\b/g
+        var AsearchText = text.match(Aregex);
+        var Bregex = /\b\d+\.\d+\b/g
+        var BsearchText = text.match(Bregex);
 
-        if (searchText) {
+        if (AsearchText) {
             var splitText = text.split(/\b\d+\:\d+\b/g);
-            var change = searchText[0].replace(/\b\:\b/g, ".")
+            var change = AsearchText[0].replace(/\b\:\b/g, ".")
+            splitText.splice(1, 0, change);
+            text = splitText.join("")
+        }
+
+        if (BsearchText) {
+            var splitText = text.split(/\b\d+\.\d+\b/g);
+            var change = BsearchText[0].replace(/\b\.\b/g, ":")
             splitText.splice(1, 0, change);
             text = splitText.join("")
         }

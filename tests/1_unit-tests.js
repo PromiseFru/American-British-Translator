@@ -261,7 +261,11 @@ suite('Unit Tests', () => {
                 var text = "Tea time is usually around 4 or 4.30";
                 var translation = "Tea time is usually around 4 or 4:30"
 
-                // done();
+                var result = translate.time(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })
