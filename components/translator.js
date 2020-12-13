@@ -42,6 +42,24 @@ class Translator {
         return text;
     }
 
+    britishOnly(text) {
+        var britishSpellings = Object.keys(britishOnly);
+        var americanSpellings = Object.values(britishOnly);
+
+        // search text for any matching words or sentences in dic
+        for (var i = 0; i < britishSpellings.length; i++) {
+            var regex = new RegExp(`(?<!-)(\\b${britishSpellings[i]}\\b)`, "gi")
+            var searchText = text.match(regex);
+
+            if (searchText) {
+                text = text.replace(regex, americanSpellings[i]);
+            }
+
+        }
+
+        return text;
+    }
+
     titles(text) {
         var americanSpellings = Object.keys(americanToBritishTitles);
         var britishSpellings = Object.values(americanToBritishTitles);
@@ -78,8 +96,8 @@ class Translator {
 
 }
 
-var input = "Lunch is at 12:15 today"
+var input = "I had a bicky then went to the chippy"
 
-console.log(new Translator().time(input))
+console.log(new Translator().britishOnly(input))
 
 module.exports = Translator;

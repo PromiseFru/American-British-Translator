@@ -150,42 +150,66 @@ suite('Unit Tests', () => {
                 var text = "We watched the footie match for a while";
                 var translation = "We watched the soccer match for a while"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("Paracetamol takes up to an hour to work", (done) => {
                 var text = "Paracetamol takes up to an hour to work";
                 var translation = "Tylenol takes up to an hour to work"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("I spent the bank holiday at the funfair", (done) => {
                 var text = "I spent the bank holiday at the funfair";
                 var translation = "I spent the public holiday at the carnival"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("I had a bicky then went to the chippy", (done) => {
                 var text = "I had a bicky then went to the chippy";
                 var translation = "I had a cookie then went to the fish-and-chip shop"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("I've just got bits and bobs in my bum bag", (done) => {
                 var text = "I've just got bits and bobs in my bum bag";
                 var translation = "I've just got odds and ends in my fanny pack"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
             test("The car boot sale at Boxted Airfield was called off", (done) => {
                 var text = "The car boot sale at Boxted Airfield was called off";
                 var translation = "The swap meet at Boxted Airfield was called off"
 
-                // done();
+                var result = translate.britishOnly(text);
+
+                assert.equal(result, translation)
+
+                done();
             });
 
         })
