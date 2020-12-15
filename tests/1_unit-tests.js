@@ -17,7 +17,7 @@ suite('Unit Tests', () => {
 
             test('Mangoes are my favorite fruit', (done) => {
                 var text = "Mangoes are my favorite fruit";
-                var translation = "Mangoes are my favourite fruit"
+                var translation = `Mangoes are my <span class="highlight">favourite</span> fruit`
 
                 var result = translate.americanToBritish(text);
 
@@ -28,7 +28,7 @@ suite('Unit Tests', () => {
 
             test('I ate yogurt for breakfast', (done) => {
                 var text = "I ate yogurt for breakfast";
-                var translation = "I ate yoghurt for breakfast"
+                var translation = `I ate <span class="highlight">yoghurt</span> for breakfast`
 
                 var result = translate.americanToBritish(text);
 
@@ -43,7 +43,7 @@ suite('Unit Tests', () => {
 
             test("We had a party at my friend's condo", (done) => {
                 var text = "We had a party at my friend's condo";
-                var translation = "We had a party at my friend's flat"
+                var translation = `We had a party at my friend's <span class="highlight">flat</span>`
 
                 var result = translate.americanOnly(text);
 
@@ -54,7 +54,7 @@ suite('Unit Tests', () => {
 
             test("Can you toss this in the trashcan for me?", (done) => {
                 var text = "Can you toss this in the trashcan for me?";
-                var translation = "Can you toss this in the bin for me?"
+                var translation = `Can you toss this in the <span class="highlight">bin</span> for me?`
 
                 var result = translate.americanOnly(text);
 
@@ -66,7 +66,7 @@ suite('Unit Tests', () => {
 
             test("The parking lot was full", (done) => {
                 var text = "The parking lot was full";
-                var translation = "The car park was full"
+                var translation = `The <span class="highlight">car park</span> was full`
 
                 var result = translate.americanOnly(text);
 
@@ -77,7 +77,7 @@ suite('Unit Tests', () => {
 
             test("Like a high tech Rube Goldberg machine", (done) => {
                 var text = "Like a high tech Rube Goldberg machine";
-                var translation = "Like a high tech Heath Robinson device"
+                var translation = `Like a high tech <span class="highlight">Heath Robinson device</span>`
 
                 var result = translate.americanOnly(text);
 
@@ -88,7 +88,7 @@ suite('Unit Tests', () => {
 
             test("To play hooky means to skip class or work", (done) => {
                 var text = "To play hooky means to skip class or work";
-                var translation = "To bunk off means to skip class or work"
+                var translation = `To <span class="highlight">bunk off</span> means to skip class or work`
 
                 var result = translate.americanOnly(text);
 
@@ -103,7 +103,7 @@ suite('Unit Tests', () => {
 
             test("No Mr. Bond, I expect you to die", (done) => {
                 var text = "No Mr. Bond, I expect you to die";
-                var translation = "No Mr Bond, I expect you to die"
+                var translation = `No <span class="highlight">Mr</span> Bond, I expect you to die`
 
                 var result = translate.titles(text);
 
@@ -114,7 +114,7 @@ suite('Unit Tests', () => {
 
             test("Dr. Grosh will see you now", (done) => {
                 var text = "Dr. Grosh will see you now";
-                var translation = "Dr Grosh will see you now"
+                var translation = `<span class="highlight">Dr</span> Grosh will see you now`
 
                 var result = translate.titles(text);
 
@@ -129,7 +129,7 @@ suite('Unit Tests', () => {
 
             test("Lunch is at 12:15 today", (done) => {
                 var text = "Lunch is at 12:15 today";
-                var translation = "Lunch is at 12.15 today"
+                var translation = `Lunch is at 12<span class="highlight">.</span>15 today`
 
                 var result = translate.time(text);
 
@@ -148,7 +148,7 @@ suite('Unit Tests', () => {
 
             test("We watched the footie match for a while", (done) => {
                 var text = "We watched the footie match for a while";
-                var translation = "We watched the soccer match for a while"
+                var translation = `We watched the <span class="highlight">soccer</span> match for a while`
 
                 var result = translate.britishOnly(text);
 
@@ -159,7 +159,7 @@ suite('Unit Tests', () => {
 
             test("Paracetamol takes up to an hour to work", (done) => {
                 var text = "Paracetamol takes up to an hour to work";
-                var translation = "Tylenol takes up to an hour to work"
+                var translation = `<span class="highlight">Tylenol</span> takes up to an hour to work`
 
                 var result = translate.britishOnly(text);
 
@@ -170,7 +170,7 @@ suite('Unit Tests', () => {
 
             test("I spent the bank holiday at the funfair", (done) => {
                 var text = "I spent the bank holiday at the funfair";
-                var translation = "I spent the public holiday at the carnival"
+                var translation = `I spent the <span class="highlight">public holiday</span> at the <span class="highlight">carnival</span>`
 
                 var result = translate.britishOnly(text);
 
@@ -181,7 +181,7 @@ suite('Unit Tests', () => {
 
             test("I had a bicky then went to the chippy", (done) => {
                 var text = "I had a bicky then went to the chippy";
-                var translation = "I had a cookie then went to the fish-and-chip shop"
+                var translation = `I had a <span class="highlight">cookie</span> then went to the <span class="highlight">fish-and-chip shop</span>`
 
                 var result = translate.britishOnly(text);
 
@@ -192,7 +192,7 @@ suite('Unit Tests', () => {
 
             test("I've just got bits and bobs in my bum bag", (done) => {
                 var text = "I've just got bits and bobs in my bum bag";
-                var translation = "I've just got odds and ends in my fanny pack"
+                var translation = `I've just got <span class="highlight">odds and ends</span> in my <span class="highlight">fanny pack</span>`
 
                 var result = translate.britishOnly(text);
 
@@ -203,7 +203,7 @@ suite('Unit Tests', () => {
 
             test("The car boot sale at Boxted Airfield was called off", (done) => {
                 var text = "The car boot sale at Boxted Airfield was called off";
-                var translation = "The swap meet at Boxted Airfield was called off"
+                var translation = `The <span class="highlight">swap meet</span> at Boxted Airfield was called off`
 
                 var result = translate.britishOnly(text);
 
@@ -218,7 +218,7 @@ suite('Unit Tests', () => {
 
             test("First, caramelise the onions", (done) => {
                 var text = "First, caramelise the onions";
-                var translation = "First, caramelize the onions"
+                var translation = `First, <span class="highlight">caramelize</span> the onions`
 
                 var result = translate.americanToBritish(text);
 
@@ -233,7 +233,7 @@ suite('Unit Tests', () => {
 
             test("Have you met Mrs Kalyani?", (done) => {
                 var text = "Have you met Mrs Kalyani?";
-                var translation = "Have you met Mrs. Kalyani?"
+                var translation = `Have you met <span class="highlight">Mrs.</span> Kalyani?`
 
                 var result = translate.titles(text);
 
@@ -244,7 +244,7 @@ suite('Unit Tests', () => {
 
             test("Prof Joyner of King's College, London", (done) => {
                 var text = "Prof Joyner of King's College, London";
-                var translation = "Prof. Joyner of King's College, London"
+                var translation = `<span class="highlight">Prof.</span> Joyner of King's College, London`
 
                 var result = translate.titles(text);
 
@@ -259,7 +259,7 @@ suite('Unit Tests', () => {
 
             test("Tea time is usually around 4 or 4.30", (done) => {
                 var text = "Tea time is usually around 4 or 4.30";
-                var translation = "Tea time is usually around 4 or 4:30"
+                var translation = `Tea time is usually around 4 or 4<span class="highlight">:</span>30`
 
                 var result = translate.time(text);
 

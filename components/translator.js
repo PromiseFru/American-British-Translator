@@ -18,10 +18,10 @@ class Translator {
             var BsearchText = text.match(Bregex);
 
             if (AsearchText) {
-                text = text.replace(Aregex, britishSpellings[i]);
+                text = text.replace(Aregex, `<span class="highlight">${britishSpellings[i]}</span>`);
             }
             if (BsearchText) {
-                text = text.replace(Bregex, americanSpellings[i]);
+                text = text.replace(Bregex, `<span class="highlight">${americanSpellings[i]}</span>`);
             }
 
         }
@@ -39,7 +39,7 @@ class Translator {
             var searchText = text.match(regex);
 
             if (searchText) {
-                text = text.replace(regex, britishSpellings[i]);
+                text = text.replace(regex, `<span class="highlight">${britishSpellings[i]}</span>`);
             }
 
         }
@@ -57,7 +57,7 @@ class Translator {
             var searchText = text.match(regex);
 
             if (searchText) {
-                text = text.replace(regex, americanSpellings[i]);
+                text = text.replace(regex, `<span class="highlight">${americanSpellings[i]}</span>`);
             }
 
         }
@@ -79,12 +79,12 @@ class Translator {
             if (AsearchText) {
                 var firstLetter = britishSpellings[i].charAt(0).toUpperCase()
                 var bodyLetters = britishSpellings[i].substr(1)
-                text = text.replace(Aregex, firstLetter + bodyLetters);
+                text = text.replace(Aregex, `<span class="highlight">${firstLetter}${bodyLetters}</span>`);
             }
             if (BsearchText) {
                 var firstLetter = americanSpellings[i].charAt(0).toUpperCase()
                 var bodyLetters = americanSpellings[i].substr(1)
-                text = text.replace(Bregex, firstLetter + bodyLetters + " ");
+                text = text.replace(Bregex, `<span class="highlight">${firstLetter}${bodyLetters}</span> `);
             }
 
         }
@@ -100,14 +100,14 @@ class Translator {
 
         if (AsearchText) {
             var splitText = text.split(/\b\d+\:\d+\b/g);
-            var change = AsearchText[0].replace(/\b\:\b/g, ".")
+            var change = AsearchText[0].replace(/\b\:\b/g, `<span class="highlight">.</span>`)
             splitText.splice(1, 0, change);
             text = splitText.join("")
         }
 
         if (BsearchText) {
             var splitText = text.split(/\b\d+\.\d+\b/g);
-            var change = BsearchText[0].replace(/\b\.\b/g, ":")
+            var change = BsearchText[0].replace(/\b\.\b/g, `<span class="highlight">:</span>`)
             splitText.splice(1, 0, change);
             text = splitText.join("")
         }
@@ -145,7 +145,7 @@ class Translator {
 
 }
 
-var input = "Dr Grosh will see you now"
+var input = "Lunch is at 12:15 today"
 
 console.log(new Translator().translate(input))
 
