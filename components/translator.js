@@ -119,8 +119,7 @@ class Translator {
         var ATB = this.americanToBritish(text);
         var AO = this.americanOnly(text);
         var BO = this.britishOnly(text);
-        var ATBT = this.americanToBritishTitles(text);
-        var BTAT = this.britishToAmericanTitles(text);
+        var Ts = this.titles(text);
         var T = this.time(text);
 
         if (ATB != text) {
@@ -132,11 +131,8 @@ class Translator {
         if (BO != text) {
             return BO;
         }
-        if (ATBT != text) {
-            return ATBT;
-        }
-        if (BTAT != text) {
-            return BTAT;
+        if (Ts != text) {
+            return Ts;
         }
         if (T != text) {
             return T;
@@ -151,6 +147,6 @@ class Translator {
 
 var input = "Dr Grosh will see you now"
 
-console.log(new Translator().titles(input))
+console.log(new Translator().translate(input))
 
 module.exports = Translator;
