@@ -65,38 +65,26 @@ class Translator {
         return text;
     }
 
-    americanToBritishTitles(text) {
-        var americanSpellings = Object.keys(americanToBritishTitles);
-        var britishSpellings = Object.values(americanToBritishTitles);
-
-        // search text for any matching words or sentences in dic
-        for (var i = 0; i < americanSpellings.length; i++) {
-            var regex = new RegExp(`\\b${americanSpellings[i]}`, "gi")
-            var searchText = text.match(regex);
-
-            if (searchText) {
-                var firstLetter = britishSpellings[i].charAt(0).toUpperCase()
-                var bodyLetters = britishSpellings[i].substr(1)
-                text = text.replace(regex, firstLetter + bodyLetters);
-            }
-        }
-
-        return text;
-    }
-
-    britishToAmericanTitles(text) {
+    titles(text) {
         var americanSpellings = Object.keys(americanToBritishTitles);
         var britishSpellings = Object.values(americanToBritishTitles);
 
         // search text for any matching words or sentences in dic
         for (var i = 0; i < britishSpellings.length; i++) {
-            var regex = new RegExp(`\\b${britishSpellings[i]}\\b`, "gi")
-            var searchText = text.match(regex);
+            var Aregex = new RegExp(`\\b${britishSpellings[i]}\\.`, "gi")
+            var Bregex = new RegExp(`\\b${britishSpellings[i]}\\s`, "gi")
+            var AsearchText = text.match(Aregex);
+            var BsearchText = text.match(Bregex);
 
-            if (searchText) {
+            if (AsearchText) {
+                var firstLetter = britishSpellings[i].charAt(0).toUpperCase()
+                var bodyLetters = britishSpellings[i].substr(1)
+                text = text.replace(Aregex, firstLetter + bodyLetters);
+            }
+            if (BsearchText) {
                 var firstLetter = americanSpellings[i].charAt(0).toUpperCase()
                 var bodyLetters = americanSpellings[i].substr(1)
-                text = text.replace(regex, firstLetter + bodyLetters);
+                text = text.replace(Bregex, firstLetter + bodyLetters + " ");
             }
 
         }
@@ -127,10 +115,42 @@ class Translator {
         return text
     }
 
+    translate(text) {
+        var ATB = this.americanToBritish(text);
+        var AO = this.americanOnly(text);
+        var BO = this.britishOnly(text);
+        var ATBT = this.americanToBritishTitles(text);
+        var BTAT = this.britishToAmericanTitles(text);
+        var T = this.time(text);
+
+        if (ATB != text) {
+            return ATB;
+        }
+        if (AO != text) {
+            return AO;
+        }
+        if (BO != text) {
+            return BO;
+        }
+        if (ATBT != text) {
+            return ATBT;
+        }
+        if (BTAT != text) {
+            return BTAT;
+        }
+        if (T != text) {
+            return T;
+        }
+
+        return {
+            error: "Everything looks good to me!"
+        }
+    }
+
 }
 
-var input = "Dr. Grosh will see you now"
+var input = "Dr Grosh will see you now"
 
-console.log(new Translator().americanToBritishTitles(input))
+console.log(new Translator().titles(input))
 
 module.exports = Translator;
