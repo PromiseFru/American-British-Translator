@@ -105,7 +105,7 @@ suite('Unit Tests', () => {
                 var text = "No Mr. Bond, I expect you to die";
                 var translation = `No <span class="highlight">Mr</span> Bond, I expect you to die`
 
-                var result = translate.titles(text);
+                var result = translate.americanToBritishTitles(text);
 
                 assert.equal(result, translation)
 
@@ -116,7 +116,7 @@ suite('Unit Tests', () => {
                 var text = "Dr. Grosh will see you now";
                 var translation = `<span class="highlight">Dr</span> Grosh will see you now`
 
-                var result = translate.titles(text);
+                var result = translate.americanToBritishTitles(text);
 
                 assert.equal(result, translation)
 
@@ -131,7 +131,7 @@ suite('Unit Tests', () => {
                 var text = "Lunch is at 12:15 today";
                 var translation = `Lunch is at 12<span class="highlight">.</span>15 today`
 
-                var result = translate.time(text);
+                var result = translate.americanToBritishTime(text);
 
                 assert.equal(result, translation)
 
@@ -220,7 +220,7 @@ suite('Unit Tests', () => {
                 var text = "First, caramelise the onions";
                 var translation = `First, <span class="highlight">caramelize</span> the onions`
 
-                var result = translate.americanToBritish(text);
+                var result = translate.britishToAmerican(text);
 
                 assert.equal(result, translation)
 
@@ -235,7 +235,7 @@ suite('Unit Tests', () => {
                 var text = "Have you met Mrs Kalyani?";
                 var translation = `Have you met <span class="highlight">Mrs.</span> Kalyani?`
 
-                var result = translate.titles(text);
+                var result = translate.britishToAmericanTitles(text);
 
                 assert.equal(result, translation)
 
@@ -246,7 +246,7 @@ suite('Unit Tests', () => {
                 var text = "Prof Joyner of King's College, London";
                 var translation = `<span class="highlight">Prof.</span> Joyner of King's College, London`
 
-                var result = translate.titles(text);
+                var result = translate.britishToAmericanTitles(text);
 
                 assert.equal(result, translation)
 
@@ -261,7 +261,7 @@ suite('Unit Tests', () => {
                 var text = "Tea time is usually around 4 or 4.30";
                 var translation = `Tea time is usually around 4 or 4<span class="highlight">:</span>30`
 
-                var result = translate.time(text);
+                var result = translate.britishToAmericanTime(text);
 
                 assert.equal(result, translation)
 
@@ -273,11 +273,25 @@ suite('Unit Tests', () => {
         suite("British to american highlight", () => {
 
             test("We watched the footie match for a while", (done) => {
+                var text = "We watched the footie match for a while";
+                var translation = `We watched the <span class="highlight">soccer</span> match for a while`
 
+                var result = translate.britishTranslation(text);
+
+                assert.equal(result, translation)
+
+                done();
             })
 
             test("Paracetamol takes up to an hour to work", (done) => {
-                
+                var text = "Paracetamol takes up to an hour to work";
+                var translation = `<span class="highlight">Tylenol</span> takes up to an hour to work`
+
+                var result = translate.britishTranslation(text);
+
+                assert.equal(result, translation)
+
+                done();
             })
 
         })
@@ -285,11 +299,25 @@ suite('Unit Tests', () => {
         suite("American to british highlight", () => {
 
             test("Mangoes are my favorite fruit", (done) => {
+                var text = "Mangoes are my favorite fruit";
+                var translation = `Mangoes are my <span class="highlight">favourite</span> fruit`
 
+                var result = translate.americanTranslation(text);
+
+                assert.equal(result, translation)
+
+                done();
             })
 
             test("I ate yogurt for breakfast", (done) => {
-                
+                var text = "I ate yogurt for breakfast";
+                var translation = `I ate <span class="highlight">yoghurt</span> for breakfast`
+
+                var result = translate.americanTranslation(text);
+
+                assert.equal(result, translation)
+
+                done();
             })
 
         })
