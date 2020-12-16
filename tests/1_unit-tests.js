@@ -270,6 +270,30 @@ suite('Unit Tests', () => {
 
         })
 
+        suite("British to american highlight", () => {
+
+            test("We watched the footie match for a while", (done) => {
+
+            })
+
+            test("Paracetamol takes up to an hour to work", (done) => {
+                
+            })
+
+        })
+
+        suite("American to british highlight", () => {
+
+            test("Mangoes are my favorite fruit", (done) => {
+
+            })
+
+            test("I ate yogurt for breakfast", (done) => {
+                
+            })
+
+        })
+
     })
 
 });
