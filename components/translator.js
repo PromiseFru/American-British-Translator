@@ -172,7 +172,7 @@ class Translator {
     }
 
     britishTranslation(text) {
-        var BTA = this.americanToBritish(text);
+        var BTA = this.britishToAmerican(text);
         var BO = this.britishOnly(text);
         var BTAT = this.britishToAmericanTitles(text);
         var BT = this.britishToAmericanTime(text);
@@ -197,6 +197,7 @@ class Translator {
 
 }
 
-var input = "Lunch is at 12:15 today";
+// var input = "First, caramelise the onions";
+// console.log(new Translator().britishTranslation(input))
 
 module.exports = Translator;
