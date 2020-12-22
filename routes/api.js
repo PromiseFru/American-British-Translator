@@ -43,6 +43,7 @@ module.exports = function (app) {
 
         if (translation.error) {
           return res.json({
+            text: text,
             translation: translation.error
           })
         }
