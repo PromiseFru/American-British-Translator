@@ -18,7 +18,7 @@ class Translator {
             if (AsearchText) {
                 text = text.replace(Aregex, `<span class="highlight">${britishSpellings[i]}</span>`);
             }
-        
+
         }
 
         return text;
@@ -125,8 +125,8 @@ class Translator {
 
         if (AsearchText) {
             var splitText = text.split(/\b\d+\:\d+\b/g);
-            var change = AsearchText[0].replace(/\b\:\b/g, `<span class="highlight">.</span>`)
-            splitText.splice(1, 0, change);
+            var change = AsearchText[0].replace(/\b\:\b/g, `.`)
+            splitText.splice(1, 0, `<span class="highlight">${change}</span>`);
             text = splitText.join("")
         }
 
@@ -139,8 +139,8 @@ class Translator {
 
         if (BsearchText) {
             var splitText = text.split(/\b\d+\.\d+\b/g);
-            var change = BsearchText[0].replace(/\b\.\b/g, `<span class="highlight">:</span>`)
-            splitText.splice(1, 0, change);
+            var change = AsearchText[0].replace(/\b\:\b/g, `:`)
+            splitText.splice(1, 0, `<span class="highlight">${change}</span>`);
             text = splitText.join("")
         }
 
@@ -197,7 +197,7 @@ class Translator {
 
 }
 
-// var input = "First, caramelise the onions";
-// console.log(new Translator().britishTranslation(input))
+// var input = "Lunch is at 12:15 today.";
+// console.log(new Translator().americanToBritishTime(input))
 
 module.exports = Translator;
