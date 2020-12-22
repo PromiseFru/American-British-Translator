@@ -26,4 +26,24 @@ suite('Functional Tests', () => {
 
         done();
     })
+
+    test('Translation with text and invalid locale field: POST request to /api/translate', (done) => {
+        let text = 'Mangoes are my favorite fruit.'
+        let locale = ''
+        let error = 'Invalid value for locale field'
+
+        chai.request(server)
+            .post('/api/translate')
+            .send({
+                text: text,
+                locale: locale
+            })
+            .end((err, res) => {
+                assert.equal(res.status, 200)
+                assert.equal(res.body.error, error)
+            })
+
+        done();
+    })
+
 });
