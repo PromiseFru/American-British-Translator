@@ -11,7 +11,7 @@ module.exports = function (app) {
       let text = req.body.text
       let locale = req.body.locale
 
-      if (!text && !locale) {
+      if (typeof text == 'undefined' || typeof locale == 'undefined') {
         return res.json({
           error: 'Required field(s) missing'
         })
