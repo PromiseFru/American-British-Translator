@@ -28,7 +28,8 @@ module.exports = function (app) {
 
         if (translation.error) {
           return res.json({
-            translation: 'Everything looks good to me!'
+            text: text,
+            translation: translation.error
           })
         }
 
