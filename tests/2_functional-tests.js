@@ -101,4 +101,23 @@ suite('Functional Tests', () => {
         done();
     })
 
+    test('Translation with text that needs no translation: POST request to /api/translate', (done) => {
+        let text = 'Mangoes are my favorite fruit.'
+        let locale = 'british-to-american'
+        let translation = 'Everything looks good to me!'
+
+        chai.request(server)
+            .post('/api/translate')
+            .send({
+                text: text,
+                locale: locale
+            })
+            .end((err, res) => {
+                assert.equal(res.status, 200)
+                assert.equal(res.body.translation, translation)
+            })
+
+        done();
+    })
+
 });
