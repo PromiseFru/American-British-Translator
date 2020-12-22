@@ -82,4 +82,23 @@ suite('Functional Tests', () => {
         done();
     })
 
+    test('Translation with empty text: POST request to /api/translate', (done) => {
+        let text = ''
+        let locale = 'american-to-british'
+        let error = 'No text to translate'
+
+        chai.request(server)
+            .post('/api/translate')
+            .send({
+                text: text,
+                locale: locale
+            })
+            .end((err, res) => {
+                assert.equal(res.status, 200)
+                assert.equal(res.body.error, error)
+            })
+
+        done();
+    })
+
 });
