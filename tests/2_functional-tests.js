@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 let Translator = require('../components/translator.js');
 
 suite('Functional Tests', () => {
-    suite('All functional test', () => {
+    suite('POST to /api/translate', () => {
         test('Translation with text and locale fields: POST request to /api/translate', (done) => {
             let text = 'Mangoes are my favorite fruit.'
             let locale = 'american-to-british'
