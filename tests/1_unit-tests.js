@@ -129,7 +129,7 @@ suite('Unit Tests', () => {
 
             test("Lunch is at 12:15 today", (done) => {
                 var text = "Lunch is at 12:15 today";
-                var translation = `Lunch is at 12<span class="highlight">.</span>15 today`
+                var translation = `Lunch is at <span class="highlight">12.15</span> today`
 
                 var result = translate.americanToBritishTime(text);
 
@@ -259,7 +259,7 @@ suite('Unit Tests', () => {
 
             test("Tea time is usually around 4 or 4.30", (done) => {
                 var text = "Tea time is usually around 4 or 4.30";
-                var translation = `Tea time is usually around 4 or 4<span class="highlight">:</span>30`
+                var translation = `Tea time is usually around 4 or <span class="highlight">4:30</span>`
 
                 var result = translate.britishToAmericanTime(text);
 
